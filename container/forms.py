@@ -1,5 +1,7 @@
 from django.forms import BooleanField, ModelForm
 
+from container.models import Container
+
 
 class StyleFormMixin:
 
@@ -11,3 +13,7 @@ class StyleFormMixin:
             else:
                 field.widget.attrs["class"] = "form-control"
 
+class ContainerForm(StyleFormMixin, ModelForm):
+    class Meta:
+        model = Container
+        fields = '__all__'
