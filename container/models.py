@@ -9,6 +9,7 @@ class Container(models.Model):
     status_hydrotesting = models.BooleanField(verbose_name='Гидроиспытание')
     volume = models.PositiveIntegerField(verbose_name='Обьем быллона')
     client = models.ForeignKey(Client, verbose_name='Владелец', on_delete=models.CASCADE)
+    on_refueling = models.BooleanField(verbose_name='На заправке', default=False)
 
     class Meta:
         verbose_name = "Баллон"
